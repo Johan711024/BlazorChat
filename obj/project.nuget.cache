@@ -1,12 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "j40Jmyl0JmrzQRJCYoXYrmsVmZi7c7zuOa7IkFPraFYdf6ud9+03GuNdnHFYL3I8IIDILelqj7GV+PZZTMTYRw==",
+  "dgSpecHash": "lqz87e0dwJZoxpPP0K/WAuDqTLghfTw/GO5PDVG0J+06GKiV8to1wNZWCPaiwPuYcJxQ1IunC5kMbKouzqCBuw==",
   "success": true,
   "projectFilePath": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/BlazorChat.csproj",
   "expectedPackageFiles": [
+    "/Users/johansvensson/.nuget/packages/blazor.extensions.canvas/1.1.1/blazor.extensions.canvas.1.1.1.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.authorization/3.1.5/microsoft.aspnetcore.authorization.3.1.5.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.components/3.1.5/microsoft.aspnetcore.components.3.1.5.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.components.analyzers/3.1.5/microsoft.aspnetcore.components.analyzers.3.1.5.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.components.forms/3.1.5/microsoft.aspnetcore.components.forms.3.1.5.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.components.web/3.1.5/microsoft.aspnetcore.components.web.3.1.5.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.connections.abstractions/7.0.4/microsoft.aspnetcore.connections.abstractions.7.0.4.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.http.connections.client/7.0.4/microsoft.aspnetcore.http.connections.client.7.0.4.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.http.connections.common/7.0.4/microsoft.aspnetcore.http.connections.common.7.0.4.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.metadata/3.1.5/microsoft.aspnetcore.metadata.3.1.5.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.signalr.client/7.0.4/microsoft.aspnetcore.signalr.client.7.0.4.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.signalr.client.core/7.0.4/microsoft.aspnetcore.signalr.client.core.7.0.4.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.aspnetcore.signalr.common/7.0.4/microsoft.aspnetcore.signalr.common.7.0.4.nupkg.sha512",
@@ -18,6 +25,7 @@
     "/Users/johansvensson/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.extensions.options/7.0.1/microsoft.extensions.options.7.0.1.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/johansvensson/.nuget/packages/microsoft.jsinterop/3.1.5/microsoft.jsinterop.3.1.5.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
     "/Users/johansvensson/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
   ],

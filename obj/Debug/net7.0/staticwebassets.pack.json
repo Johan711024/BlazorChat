@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/BlazorChat.bundle.scp.css"
     },
     {
+      "Id": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/alert.js",
+      "PackagePath": "staticwebassets/alert.js"
+    },
+    {
       "Id": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/css/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
     },

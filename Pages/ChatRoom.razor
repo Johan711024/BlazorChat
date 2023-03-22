@@ -1,5 +1,6 @@
 @page "/chatroom"
 @inject NavigationManager navigationManager
+@inject IJSRuntime JS
 @using Microsoft.AspNetCore.SignalR.Client;
 
 
@@ -29,6 +30,7 @@ else
         <span>You are connected as <b>@_username</b></span>
         <button class="btn btn-sm btn-warning ml-md-auto" @onclick="@DisconnectAsync">Disconnect</button>
     </div>
+
     // display messages
     <div id="scrollbox">
         @foreach (var item in _messages)
@@ -49,6 +51,18 @@ else
         <textarea class="input-lg" placeholder="enter your comment" @bind="@_newMessage"></textarea>
         <button class="btn btn-default" @onclick="@(() => SendAsync(_newMessage))">Send</button>
     </div>
+    // display mousemovements
+    <div id="mousemovements" style="
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        border: 5px solid #0f0;
+    "></div> 
+        
+    
 }
 
 @code {
@@ -67,6 +81,34 @@ else
     // list of messages in chat
     private List<Message> _messages = new List<Message>();
 
+    public async Task MouseMoveToConsole()
+    {
+        Console.WriteLine($"Mouseclick");
+        
+
+        //await JS.InvokeVoidAsync("alertfunc", $"Hello !");
+        //await JS.InvokeVoidAsync("alertfunc", $"Hello !");
+
+    }
+
+    // fungerar ej
+    protected override async Task OnInitializedAsync()
+    {
+        
+        //await JS.InvokeVoidAsync("alert", $"Hello !");
+    }
+
+    // fungerar för att köra igång javascript
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("alertfunc", $"Hello !");
+            
+
+            StateHasChanged();
+        }
+    }
     public async Task Chat()
     {
         // check username is valid

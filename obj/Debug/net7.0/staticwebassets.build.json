@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TPmyHRhya9eYJUib192HmrDKIrppTXLf9nFnRi7YPSE=",
+  "Hash": "Lf8v2vztWjHOtrFyS984XctVqMuuY4VfVjqj85XRqoQ=",
   "Source": "BlazorChat",
   "BasePath": "_content/BlazorChat",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/johansvensson/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/blazor.extensions.canvas.js",
+      "SourceId": "Blazor.Extensions.Canvas",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/johansvensson/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/",
+      "BasePath": "_content/Blazor.Extensions.Canvas",
+      "RelativePath": "blazor.extensions.canvas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/johansvensson/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/blazor.extensions.canvas.js"
+    },
     {
       "Identity": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/obj/Debug/net7.0/scopedcss/bundle/BlazorChat.styles.css",
       "SourceId": "BlazorChat",
@@ -49,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/obj/Debug/net7.0/scopedcss/projectbundle/BlazorChat.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/alert.js",
+      "SourceId": "BlazorChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/",
+      "BasePath": "_content/BlazorChat",
+      "RelativePath": "alert.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/alert.js"
     },
     {
       "Identity": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/css/bootstrap/bootstrap.min.css",

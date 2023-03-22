@@ -40,3 +40,5 @@
 /Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/bin/Debug/net7.0/Microsoft.Extensions.Features.dll
 /Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
 /Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/obj/Debug/net7.0/BlazorChat.csproj.CopyComplete
+/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/bin/Debug/net7.0/Blazor.Extensions.Canvas.JS.dll
+/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/bin/Debug/net7.0/Blazor.Extensions.Canvas.dll
