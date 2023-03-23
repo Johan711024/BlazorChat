@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets/alert.js"
     },
     {
+      "Id": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/assets/Rotating_earth_animated.gif",
+      "PackagePath": "staticwebassets/assets/Rotating_earth_animated.gif"
+    },
+    {
+      "Id": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/assets/globe_dark.gif",
+      "PackagePath": "staticwebassets/assets/globe_dark.gif"
+    },
+    {
       "Id": "/Users/johansvensson/Documents/c#/BlazorServerChat/BlazorChat/wwwroot/css/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
     },
