@@ -20,9 +20,21 @@ namespace BlazorChat.Core.Components
 
         public async ValueTask Render(Canvas2DContext context)
         {
-            await context.DrawImageAsync(Sprite.SpriteSheet, _transform.Position.X, _transform.Position.Y, Sprite.Size.Width, Sprite.Size.Height);
+            await context.DrawImageAsync(Sprite.SpriteSheet, _transform.Position.X, _transform.Position.Y,
+                Sprite.Size.Width, Sprite.Size.Height);
+
+            if (DrawBoundingBox)
+            {
+                await context.SetStrokeStyleAsync($"rgb(255,255,0)");
+                await context.SetLineWidthAsync(3);
+                await context.StrokeRectAsync(_transform.BoundingBox.X, _transform.BoundingBox.Y,
+                    _transform.BoundingBox.Width,
+                    _transform.BoundingBox.Height);
+            }
         }
 
         public Sprite Sprite { get; }
+
+        public bool DrawBoundingBox { get; set; } = false;
     }
 }

@@ -15,6 +15,7 @@ namespace BlazorChat
 
         public virtual async ValueTask Update(GameContext game)
         {
+
         }
 
         public GameObject Owner { get; }

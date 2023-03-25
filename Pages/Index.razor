@@ -6,6 +6,7 @@
 @using BlazorChat
 @using BlazorChat.Data
 @using BlazorChat.Core
+@using BlazorChat.Models
 
 
 @inject IJSRuntime JsRuntime
@@ -60,6 +61,7 @@
     }
 
     [JSInvokable]
+
     public async ValueTask GameLoop(float timeStamp)
     {
         if (null == _game) return;
@@ -67,8 +69,29 @@
     }
 
     [JSInvokable]
+    public async ValueTask OnMouseMove(int mouseX, int mouseY)
+    {
+        InputSystem.Instance.MouseCoords.X = mouseX;
+        InputSystem.Instance.MouseCoords.Y = mouseY;
+    }
+
+    [JSInvokable]
+    public async ValueTask OnMouseDown(MouseButtons button)
+    {
+        
+        InputSystem.Instance.SetButtonState(button, ButtonStates.Down);
+    }
+
+    [JSInvokable]
+    public async ValueTask OnMouseUp(MouseButtons button)
+    {
+        InputSystem.Instance.SetButtonState(button, ButtonStates.Up);
+    }
+
+    [JSInvokable]
     public async ValueTask OnResize(int screenWidth, int screenHeight)
     {
+        
         if (null == _game) return;
         _game.Display.Size = new Size(screenWidth, screenHeight);
     }
