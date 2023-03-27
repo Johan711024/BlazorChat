@@ -32,6 +32,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/johansvensson/Documents/c\#/BlazorServerChat/BlazorChat/Pages/Inserthtml.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5zZXJ0aHRtbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johansvensson/Documents/c\#/BlazorServerChat/BlazorChat/Pages/InsertSVG.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5zZXJ0U1ZHLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johansvensson/Documents/c\#/BlazorServerChat/BlazorChat/Pages/SvgChat.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3ZnQ2hhdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/johansvensson/Documents/c\#/BlazorServerChat/BlazorChat/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

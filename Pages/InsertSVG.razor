@@ -1,0 +1,126 @@
+@page "/insertsvg"
+
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.SignalR.Client;
+
+<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4335 4335" width="100" height="100">
+    <path fill="#008DD2" d="M3346 1077c41,0 75,34 75,75 0,41 -34,75 -75,75 -41,0 -75,-34 -75,-75 0,-41 34,-75 75,-75zm-1198 -824c193,0 349,156 349,349 0,193 -156,349 -349,349 -193,0 -349,-156 -349,-349 0,-193 156,-349 349,-349zm-1116 546c151,0 274,123 274,274 0,151 -123,274 -274,274 -151,0 -274,-123 -274,-274 0,-151 123,-274 274,-274zm-500 1189c134,0 243,109 243,243 0,134 -109,243 -243,243 -134,0 -243,-109 -243,-243 0,-134 109,-243 243,-243zm500 1223c121,0 218,98 218,218 0,121 -98,218 -218,218 -121,0 -218,-98 -218,-218 0,-121 98,-218 218,-218zm1116 434c110,0 200,89 200,200 0,110 -89,200 -200,200 -110,0 -200,-89 -200,-200 0,-110 89,-200 200,-200zm1145 -434c81,0 147,66 147,147 0,81 -66,147 -147,147 -81,0 -147,-66 -147,-147 0,-81 66,-147 147,-147zm459 -1098c65,0 119,53 119,119 0,65 -53,119 -119,119 -65,0 -119,-53 -119,-119 0,-65 53,-119 119,-119z"
+    />
+</svg>
+
+
+
+<div id="svgContainer" >
+
+
+
+</div>
+
+<svg id="LinesGroup"  viewBox="0 0 4335 4335" >
+
+
+
+</svg>
+
+
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+        await CreateJsLine();
+    }
+    private string SplitCorrect(string raw){
+        //split:a endast om mellanslag finns utanför fnuttar
+
+        //1. Ta in hela "raw"
+        //2. Om fnuttar dvs ' eller "...lägg in %20 tills likadan fnutt kommer...
+
+        //leta fnutt i loop på alla tecken i raw
+        
+        bool isWithinQuotes = false;
+        var newChar = "";
+        var newString = "";
+
+        foreach (char c in raw){
+            Console.WriteLine("Char!!!!! " + c.ToString());
+            if(c.Equals(((char) 34))){
+                Console.WriteLine("Quotes!!!!!");
+                isWithinQuotes=!isWithinQuotes;
+            }
+            if(isWithinQuotes && c.Equals(((char) 32)))
+            {
+                newChar="%20";
+            }
+            else if(!isWithinQuotes && c.Equals(((char) 47)))
+            {
+                newChar=" /";
+            }
+            else
+            {     
+                newChar=c.ToString();
+            }
+            
+            newString=newString+newChar;
+
+        }
+
+        return newString;
+
+            @* var text = raw;
+            var start = text.IndexOf("\"") + 1;//add one to not include quote
+            var end = text.LastIndexOf("\"") - start;
+            var result = text.Substring(start, end); *@
+
+        //stoppa in alla tecken efter fnutt i sträng-variabel tills likadan fnutt återkommer..
+        //kör replace på sträng-variabeln dvs replace(" ", "%20")
+        //
+        //leta efter nästa fnutt
+        //returnera nya html
+    }
+
+    private IEnumerable<(string key,string value)> GetAttributes(string oldRaw)
+   {
+        var raw = SplitCorrect(oldRaw);
+        Console.WriteLine("2!!!!!!!!!!!!!!!!!!!!!! " + raw);
+        var attributes = raw.Split(((char) 32)); //mellanslag
+        var count = attributes.Count() - 1; //remove start tag and end tag
+        Console.WriteLine("3 count " + count.ToString());
+        for(int i=1;i<count;i++)
+        {
+            Console.WriteLine("for " + attributes[i]);
+            var pair = attributes[i].Split('=');
+                yield return (pair[0],pair[1].Trim('\"'));
+        }
+        Console.WriteLine("4");
+   }
+   public async Task CreateJsLine()
+    {
+        string line = "<path fill='#008DD2' d='M3346 1077c41,0 75,34 75,75 0,41 -34,75 -75,75 -41,0 -75,-34 -75,-75 0,-41 34,-75 75,-75zm-1198 -824c193,0 349,156 349,349 0,193 -156,349 -349,349 -193,0 -349,-156 -349,-349 0,-193 156,-349 349,-349zm-1116 546c151,0 274,123 274,274 0,151 -123,274 -274,274 -151,0 -274,-123 -274,-274 0,-151 123,-274 274,-274zm-500 1189c134,0 243,109 243,243 0,134 -109,243 -243,243 -134,0 -243,-109 -243,-243 0,-134 109,-243 243,-243zm500 1223c121,0 218,98 218,218 0,121 -98,218 -218,218 -121,0 -218,-98 -218,-218 0,-121 98,-218 218,-218zm1116 434c110,0 200,89 200,200 0,110 -89,200 -200,200 -110,0 -200,-89 -200,-200 0,-110 89,-200 200,-200zm1145 -434c81,0 147,66 147,147 0,81 -66,147 -147,147 -81,0 -147,-66 -147,-147 0,-81 66,-147 147,-147zm459 -1098c65,0 119,53 119,119 0,65 -53,119 -119,119 -65,0 -119,-53 -119,-119 0,-65 53,-119 119,-119z'/>";
+
+        //string line = "<line x1='0' y1='0' x2='100' y2='100' style='stroke:rgb(0,0,0);stroke-width:20' />";
+        line = line.Replace('\'', '"');
+
+        Console.WriteLine("NYTT 1");
+ 
+        List<string> names = new List<string>();
+        List<object> values = new List<object>();
+ 
+        foreach(var att in GetAttributes(line))
+        {
+            Console.WriteLine("11");
+            names.Add(att.key);
+            Console.WriteLine("12");
+            values.Add(att.value);
+            Console.WriteLine("13");
+        };
+        
+    
+        await JSRuntime.InvokeAsync<string>("InsertSVGOnTop", new object[] { "path",names,values,"LinesGroup" });
+        Console.WriteLine("5");
+        StateHasChanged();
+ 
+    }
+}

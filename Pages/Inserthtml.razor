@@ -1,0 +1,83 @@
+@page "/inserthtml"
+@inject IJSRuntime JSRuntime
+
+
+
+<h1>Insert html</h1>
+
+<p>Enter html</p>
+
+<input type="text" maxlength="200" @bind="@_insertedHtml" />
+<button type="button" @onclick="@InsertHtml">Insert</button>
+
+<div id="SpansGroup"></div>
+
+<div id="LinesGroup"></div>
+
+
+
+@if(_message!=null){
+    <div class="invalid-feedback">@_message</div>
+}
+
+
+
+@code{
+
+    //inserted html
+    private string? _insertedHtml;
+    private string? _message;
+    
+
+    public async Task InsertHtml(){
+        if(string.IsNullOrWhiteSpace(_insertedHtml)){
+            _message = "Please enter correct html";
+            return;
+        }
+        
+        CreateJsElement(_insertedHtml);
+        CreateJsLine();
+    }
+    
+    
+    public async Task CreateJsElement(string inserted)
+    {
+        string span= "<span>" + _insertedHtml + "</span>";
+        span = span.Replace('\'', '"');
+        await JSRuntime.InvokeAsync<string>("InsertOnTop", new object[] { span,"SpansGroup" });
+        StateHasChanged();
+    }
+    private IEnumerable<(string key, string value)> GetAttributes(string raw)
+    {
+        var attributes = raw.Split(' ');
+        var count = attributes.Count() -1; //remove start tag and end tag
+
+        for(int i=1; i<count; i++)
+        {
+            var pair = attributes[i].Split('=');
+            yield return (pair[0], pair[1].Trim('\"'));
+
+        }
+    }
+    public async Task CreateJsLine()
+    {
+        string line = "<line x1='0' y1='0' x2='100' y2='100' style='stroke:rgb(255,255,0);stroke-width:2' />";
+        
+        line = line.Replace('\'', '"');
+        
+        
+ 
+        List<string> names = new List<string>();
+        List<object> values = new List<object>();
+ 
+        foreach(var att in GetAttributes(line))
+        {
+            names.Add(att.key);
+            values.Add(att.value);
+        };
+ 
+        await JSRuntime.InvokeAsync<string>("InsertSVGOnTop", new object[] { "line",names,values,"LinesGroup" });
+        StateHasChanged();
+ 
+    }
+}

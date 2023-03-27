@@ -7,10 +7,9 @@
 @using BlazorChat.Data
 @using BlazorChat.Core
 
-
-@inject IJSRuntime JsRuntime
-
 @inject IJSRuntime JsRuntime;
+
+
 
 <img @ref="_spritesheet" hidden src="assets/globe_dark.gif" />
 
@@ -72,4 +71,8 @@
         if (null == _game) return;
         _game.Display.Size = new Size(screenWidth, screenHeight);
     }
+
+
+    
+
 }
